@@ -3,17 +3,23 @@ using namespace std;
 
 int main()
 {
-    int a;
-    cout << "Podaj liczbe a sprawdze czy jest liczba pierwsza: ";
-    cin >> a;       // wczytywanie liczby do sprawdzenia
-    int ile = 0;
-    if (a >= 2)
-    {
-        for (int i = 2; i < a; i++)
-        {
-            if (a % i == 0) ile++;
-        }
-        if (ile > 0) cout << "NIE";
-        else cout << "TAK";
-    }
+	int n, x;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> x;
+		if (x == 1) cout << "NIE" << endl;
+		if (x == 2) cout << "TAK" << endl;
+		for (int j = 2; j < x; j++)
+		{
+			if (x % j == 0)
+			{
+				cout << "NIE" << endl;
+				break;
+			}
+			if (j == (x - 1)) cout << "TAK" << endl;
+		}
+	}
+	return 0;
 }
+
